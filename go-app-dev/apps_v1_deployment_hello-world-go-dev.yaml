@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    environment: dev
+  name: hello-world-go-dev
+  namespace: go-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hello-world-go
+      environment: dev
+  template:
+    metadata:
+      labels:
+        app: hello-world-go
+        environment: dev
+    spec:
+      containers:
+      - image: joellgarcia/hello-world-go:1.0.0
+        name: hello-world-go
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP

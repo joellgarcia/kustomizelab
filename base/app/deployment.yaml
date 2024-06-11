@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata: 
-  name: demo-app 
+  name: hello-world-go
 spec:
   selector: 
     matchLabels:
-      app: demo-app
+      app: hello-world-go
   template:
     metadata:
       labels:
-        app: demo-app
+        app: hello-world-go
     spec: 
       containers:
-      - name: demo-app
-        image: julialamenza/api
+      - name: hello-world-go
+        image: joellgarcia/hello-world-go
         ports:
         - name: http
-          containerPort: 8075
+          containerPort: 8080
           protocol: TCP

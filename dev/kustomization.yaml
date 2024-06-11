@@ -6,16 +6,13 @@ resources:
 commonLabels:
   environment: dev
 
-namespace: demo-dev
+namespace: go-app
 nameSuffix: -dev
 
 images: 
-- name: julialamenza/api
-  newTag: '0.1.1'
+- name: joellgarcia/hello-world-go
+  newTag: 1.0.0
 
 replicas:
-- name: demo-app
+- name: hello-world-go
   count: 2
-
-
-
